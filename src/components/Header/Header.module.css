@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;  
+    padding: 20px;
+    background-color: lightskyblue;
+}
+
+.date_selector {
+    height: 30px;
+    width: 200px;
+    font-size: 1.4em;
+}
+
+.account {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.account > :nth-child(1) {
+    font-size: 2em;
+}
+
+.auth_link * {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
