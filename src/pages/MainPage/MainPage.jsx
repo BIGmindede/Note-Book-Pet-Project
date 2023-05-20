@@ -4,16 +4,18 @@ import Header from '../../components/Header/Header'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectDate } from '../../redux/slices/date'
 import NoteField from '../../components/NoteField/NoteField'
+import Cookies from 'universal-cookie'
+import { useNavigate } from 'react-router-dom'
 
 const MainPage = () => {
 
-  const date = useSelector(selectDate)
+  const cookie = new Cookies()
 
-  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    
-  }, [date])
+    if (!cookie.get("token")) navigate('/login')
+  }, [cookie.get("token")])
 
   return (
     <div className={classes.wrap}>

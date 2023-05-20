@@ -11,7 +11,7 @@ const initialState = {
 
 export const fetchNotes = createAsyncThunk('fetchNotes', 
     async (date) => {
-        const {data} = await axios.get(`http://server/notes/${date}`,
+        const {data} = await axios.get(`http://server:8088/notes/${date}`,
             {
                 headers: {
                     "Authorization": "Bearer " + cookie.get("token")
@@ -24,7 +24,7 @@ export const fetchNotes = createAsyncThunk('fetchNotes',
 
 export const fetchAddNotes = createAsyncThunk('fetchNotes',
     async (props) => {
-        const {data} = await axios.post(`http://server/notes/${props.date}`,props.value,
+        const {data} = await axios.post(`http://server:8088/notes/${props.date}`,props.value,
             {
                 headers: {
                     "Authorization": "Bearer " + cookie.get("token")
@@ -37,7 +37,7 @@ export const fetchAddNotes = createAsyncThunk('fetchNotes',
 
 export const fetchUpdateNotes = createAsyncThunk('fetchNotes',
     async (props) => {
-        const {data} = await axios.put(`http://server/notes/${props.date}`,props.value,
+        const {data} = await axios.put(`http://server:8088/notes/${props.date}`,props.value,
             {
                 headers: {
                     "Authorization": "Bearer " + cookie.get("token")
